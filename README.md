@@ -1,5 +1,5 @@
 # Mini project 3 - 2/20/26
-## Live link: shopfantasy.netlify.app
+## Live link: shopfantasy.vercel.app
 ### This project was made by Brandon Foshe
 
 #### This project uses Vite and React to create a fantasy-style online shopping website
@@ -35,3 +35,4 @@
 \
 \
 All pictures were gathered from Google Images
+
