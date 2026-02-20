@@ -17,14 +17,14 @@ const Layout = () => {
 
 
   // Remove just one item
-  const removeOne = (key) => {
+  const removeOne = (key, quant = 1) => {
     setCartItems(prev => {
-      if (prev[key].quantity <= 1) {
+      if (prev[key].quantity <= quant) {
         const updated = { ...prev };
         delete updated[key];
         return updated;
       }
-      return { ...prev, [key]: { ...prev[key], quantity: prev[key].quantity - 1 } };
+      return { ...prev, [key]: { ...prev[key], quantity: prev[key].quantity - quant } };
     });
   };
 
@@ -37,7 +37,6 @@ const Layout = () => {
       return updated;
     });
   };
-
 
   return (
     <div className="stacks">
