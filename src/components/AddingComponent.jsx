@@ -30,6 +30,12 @@ const shopItems = [
     toRemove: Lowest value of removing an item from cart, default to 1
     specMeasurement: Displays special value for items with measurements
     buttons: Shop buttons for adding different types of same item
+        helpText: Text that goes inside the button in the shop
+        label: Helper text that identifies different objects of the same type
+        displayedPrice: Price displayed in the shop button
+        pricePer: Individual price of each item, used to calculate price
+        quantity: How many of the item gets added to cart
+        cartKey: position that it shows up in the cart. Same cart keys stack items
     */
     { 
         id: 1, 
@@ -247,7 +253,7 @@ const ShopBox = ({ type, cartItems, cartKeys, addToCart, removeOne, removeAll, o
                         <div>
                             <p className="text">{formatPrice(calculatePrice(item))}</p>
                         </div>
-                        <button onClick={() => removeOne(cartKeys[index], item.toRemove)}>Remove {item.toRemove} {item.specMeasurement}</button>
+                        <button onClick={() => removeOne(cartKeys[index], item.toRemove)}>Remove {item.toRemove || 1} {item.specMeasurement}</button>
                         <button onClick={() => removeAll(cartKeys[index])}>Remove All</button>
                     </div>
                 </div>
